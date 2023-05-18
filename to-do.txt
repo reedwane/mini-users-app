@@ -1,0 +1,14 @@
+Set up a new React project with Typescript.
+Install and configure Redux Toolkit.
+Create a user slice in Redux Toolkit to handle user-related actions and state.
+Create a local storage utility to handle storing and retrieving data.
+Create a sign-up page with form validation.
+Upon successful sign-up, assign super admin role to first user and store user data in local storage.
+Create a login page with form validation.
+Upon successful login, store user data in local storage and update Redux store with user information.
+Create a private route component that requires authentication before accessing certain pages.
+Create a user list page that displays a list of created users with options to edit or delete users (super admin only).
+Create a user details page that displays the details of the logged in user.
+Create an admin page (super admin only) that displays user list with options to create, edit, or delete users.
+Implement API-like requests for user-related actions (create, read, update, delete) using Redux Toolkit's createAsyncThunk and thunkAPI.
+Add React Bootstrap components for styling and layout.

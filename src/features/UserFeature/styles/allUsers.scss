@@ -1,0 +1,22 @@
+.view-all-users-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 1rem auto;
+
+  .users-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+    flex-direction: row;
+    padding: 1.5rem;
+  }
+
+  .user-card {
+    max-width: 350px;
+    width: 100%;
+  }
+}
