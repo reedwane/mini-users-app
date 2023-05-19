@@ -33,7 +33,7 @@ const setUsersToStorage = (payload: any) => {
 const initialState = usersAdapter.getInitialState<AuthState>({
   status: "idle",
   error: null,
-  loggedInUser: null,
+  loggedInUser: JSON.parse(localStorage.getItem("loggedInUser")!) || null,
 });
 
 export const login = createAsyncThunk(

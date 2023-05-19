@@ -12,6 +12,12 @@ interface User {
   password: string;
 }
 
+interface CreateUser {
+  name: string;
+  email: string;
+  password: string;
+}
+
 interface UserState {
   status: string;
   error: null | string;
@@ -50,7 +56,7 @@ export const fetchUserById = createAsyncThunk(
 // Async thunk to create a new user
 export const createUser = createAsyncThunk(
   "users/create",
-  async (user: User) => {
+  async (user: CreateUser) => {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const existingUser = users.find((u: User) => u.email === user.email);
     if (existingUser) throw new Error("User with email already exists");

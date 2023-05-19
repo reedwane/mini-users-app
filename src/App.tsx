@@ -7,6 +7,8 @@ import Login from "features/AuthFeature/Login";
 import Register from "features/AuthFeature/Register";
 import ForgotPassword from "features/AuthFeature/ForgotPassword";
 import ViewSingleUser from "features/UserFeature/ViewSingleUser";
+import UpdateUser from "features/UserFeature/UpdateUser";
+import CreateUser from "features/UserFeature/CreateUser";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
 
           <Route path="/app/*" element={<ProtectedRoute />}>
             <Route index element={<ViewAllUsers />} />
-            <Route path=":user" element={<ViewSingleUser />} />
+            <Route path="create-user" element={<CreateUser />} />
+            <Route path=":userId" element={<ViewSingleUser />} />
+            <Route path=":userId/edit" element={<UpdateUser />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

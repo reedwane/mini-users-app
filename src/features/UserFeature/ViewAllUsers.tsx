@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Card, Pagination } from "react-bootstrap";
+import { Button, Card, Pagination } from "react-bootstrap";
 import { fetchUsers, selectAllUsers } from "./State/UserSlice";
 import { useAppDispatch } from "app/hooks";
 
 import "./styles/allUsers.scss";
+import { Link } from "react-router-dom";
 
 const ViewAllUsers = () => {
   const dispatch = useAppDispatch();
@@ -14,7 +15,7 @@ const ViewAllUsers = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
   const totalItems = users.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,11 +31,15 @@ const ViewAllUsers = () => {
   return (
     <div className="view-all-users-page">
       <h2>All Users</h2>
+      <Link to={"create-user"}>Create New User</Link>
+
       <Card className="users-container">
         {displayedUsers.map((user) => (
           <Card className="user-card" key={user.id}>
             <Card.Body>
-              <Card.Title>{user.name}</Card.Title>
+              <Link to={`/app/${user?.id}`}>
+                <Card.Title>{user.name}</Card.Title>{" "}
+              </Link>
               <Card.Text>Email: {user.email}</Card.Text>
             </Card.Body>
           </Card>
